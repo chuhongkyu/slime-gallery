@@ -33,6 +33,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           property="og:image"
           content="https://nextjsconf-pics.vercel.app/og-image.png"
         />
+        <meta name="google-site-verification" content="mtYE_cYSNMHVF7KJPjly8GIJXgXfrbCG67BzEi3OY3c" />
         <meta
           name="twitter:image"
           content="https://nextjsconf-pics.vercel.app/og-image.png"
@@ -104,32 +105,13 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
       <footer className="p-6 text-center text-white/80 sm:p-12">
         Thank you to{" "}
         <a
-          href="https://edelsonphotography.com/"
+          href="https://mrchu.netlify.app/"
           target="_blank"
           className="font-semibold hover:text-white"
           rel="noreferrer"
         >
-          Josh Edelson
+          Hong kyu, chu
         </a>
-        ,{" "}
-        <a
-          href="https://www.newrevmedia.com/"
-          target="_blank"
-          className="font-semibold hover:text-white"
-          rel="noreferrer"
-        >
-          Jenny Morgan
-        </a>
-        , and{" "}
-        <a
-          href="https://www.garysextonphotography.com/"
-          target="_blank"
-          className="font-semibold hover:text-white"
-          rel="noreferrer"
-        >
-          Gary Sexton
-        </a>{" "}
-        for the pictures.
       </footer>
     </>
   );
