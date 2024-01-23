@@ -8,19 +8,20 @@ class MyDocument extends Document {
           <link rel="icon" href="/favicon.ico" />
           <meta
             name="description"
-            content="See pictures from Next.js Conf and the After Party."
+            content="See pictures from Slime Stickers."
           />
-          <meta property="og:site_name" content="nextjsconf-pics.vercel.app" />
+          <meta property="og:site_name" content="slime-gallery.vercel.app" />
           <meta
             property="og:description"
-            content="See pictures from Next.js Conf and the After Party."
+            content="See pictures from Slime Stickers"
           />
-          <meta property="og:title" content="Next.js Conf 2022 Pictures" />
+          <meta name="keyword" content="Slime, Stickers, Cute, RPG"/>
+          <meta property="og:title" content="Slime Stickers Pictures" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Next.js Conf 2022 Pictures" />
+          <meta name="twitter:title" content="Slime Stickers Pictures" />
           <meta
             name="twitter:description"
-            content="See pictures from Next.js Conf and the After Party."
+            content="See pictures from Slime Stickers"
           />
         </Head>
         <body className="bg-black antialiased">
