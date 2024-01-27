@@ -1,6 +1,5 @@
-import { CylinderCollider, RigidBody } from "@react-three/rapier"
+import { RigidBody } from "@react-three/rapier"
 import { SlimeController } from "./SlimeController"
-import { Cylinder } from "@react-three/drei"
 import Lights from "./Lights"
 
 const SceneGame = () => {
@@ -8,16 +7,16 @@ const SceneGame = () => {
         <>
             <Lights/>
             <group position-y={-1}>
+                {/* Ground */}
                 <RigidBody
-                    colliders={false}
-                    type="fixed"
-                    position-y={-0.5}
-                    friction={2}
+                type="fixed"
+                position-y={-0.1 / 2}
+                rotation={[-Math.PI / 2, 0, 0]}
                 >
-                    <CylinderCollider args={[1 / 2, 5]} />
-                    <Cylinder scale={[5, 1, 5]} receiveShadow>
-                        <meshStandardMaterial color="white" />
-                    </Cylinder>
+                <mesh receiveShadow>
+                    <boxGeometry args={[100, 100, 0.1]} />
+                    <meshStandardMaterial color="rgb(139, 142, 76)" transparent opacity={0.8} />
+                </mesh>
                 </RigidBody>
 
                 <SlimeController />

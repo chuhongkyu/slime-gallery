@@ -33,8 +33,8 @@ const Scene = ({ img }: { img: string }) => {
     return(
         <KeyboardControls map={map}>
             <Canvas shadows camera={{ position: [0, 6, 14], fov: 42 }}>
-                <color attach="background" args={["#dbecfb"]} />
-                <fog attach="fog" args={["#dbecfb", 30, 40]} />
+                <color attach="background" args={["#55d9fa"]} />
+                <fog attach="fog" args={["#55d9fa", 30, 39]} />
                 <Suspense>
                 <Physics debug>
                     <SceneGame />

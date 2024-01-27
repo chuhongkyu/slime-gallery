@@ -10,8 +10,12 @@ const Scene = dynamic(() => import('../../components/content/Scene'), {ssr: fals
 
 const Content: NextPage = ({ images }: { images: ImageProps }) => {
     return(
-        <main className="w-full h-screen">
-            <Scene img={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${images[0].public_id}.${images[0].format}`} />
+        <motion.main 
+          className="w-full h-screen" 
+          initial={{ backgroundColor: "rgb(0,0,0)"}} 
+          animate={{ backgroundColor: "rgb(255,255,255)", transition:{ delay: 0.5, ease: "easeInOut" }}}>
+            <Scene img={'/fire-slime.png'} />
+            {/* <Scene img={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_720/${images[0].public_id}.${images[0].format}`} /> */}
             <motion.div animate={{scale: [1,1,0.8,0.6,0.4,0.2,0.2,0.2,0], transition: {duration: 1.5, ease: "linear"}}} className="w-full h-screen fixed top-0 left-0 flex justify-center">
                 <Image
                     alt="Photo-slime"
@@ -28,7 +32,7 @@ const Content: NextPage = ({ images }: { images: ImageProps }) => {
                     25vw"
                 />
             </motion.div>
-        </main>
+        </motion.main>
     )
 }
 

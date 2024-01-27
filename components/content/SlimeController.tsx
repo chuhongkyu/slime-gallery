@@ -32,11 +32,11 @@ export const SlimeController = () => {
     let changeRotation = false;
     if (rightPressed && linvel.x < MAX_VEL) {
       impulse.x += MOVEMENT_SPEED;
-      changeRotation = true;
+      // changeRotation = true;
     }
     if (leftPressed && linvel.x > -MAX_VEL) {
       impulse.x -= MOVEMENT_SPEED;
-      changeRotation = true;
+      // changeRotation = true;
     }
     if (backPressed && linvel.z < MAX_VEL) {
       impulse.z += MOVEMENT_SPEED;
@@ -69,6 +69,7 @@ export const SlimeController = () => {
         <group ref={character}>
           <Slime />
         </group>
+        
       </RigidBody>
     </group>
   );
