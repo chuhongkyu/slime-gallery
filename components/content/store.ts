@@ -1,11 +1,11 @@
-import create from 'zustand';
+import { create }from 'zustand';
 
 interface SlimeStore {
-  slime: string;
-  setSlime: (slime: string) => void;
+  imageUrl: string;
+  setImageUrl: (url: string) => void;
 }
 
 export const useSlimeStore = create<SlimeStore>((set) => ({
-  slime: '/main.webp',
-  setSlime: (slime) => set({ slime }),
+  imageUrl: '/fire-slime.png',
+  setImageUrl: (url) => set({ imageUrl: url }),
 }));

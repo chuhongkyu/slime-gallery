@@ -3,7 +3,6 @@ import { Canvas } from "@react-three/fiber"
 import { Physics } from "@react-three/rapier";
 import { Suspense, useEffect, useMemo } from "react";
 import SceneGame from "./SceneGame";
-import { useSlimeStore } from "./store";
 
 export const Controls = {
     forward: "forward",
@@ -13,13 +12,7 @@ export const Controls = {
     jump: "jump",
 };
 
-const Scene = ({ img }: { img: string }) => {
-    const setSlime = useSlimeStore((state) => state.setSlime);
-
-    useEffect(() => {
-        setSlime(img);
-    }, [img]);
-
+const Scene = () => {
     const map = useMemo(
         () => [
           { name: Controls.forward, keys: ["ArrowUp", "KeyW"] },

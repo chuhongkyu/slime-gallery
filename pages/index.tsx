@@ -9,6 +9,7 @@ import cloudinary from "../utils/cloudinary";
 import getBase64ImageUrl from "../utils/generateBlurPlaceholder";
 import type { ImageProps } from "../utils/types";
 import { useLastViewedPhoto } from "../utils/useLastViewedPhoto";
+import ButtonDetail from "../components/ButtonDetail";
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const router = useRouter();
@@ -102,7 +103,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           ))}
         </div>
       </main>
-      
+      <ButtonDetail/>
       <footer className="p-6 text-center text-white/80 sm:p-12">
         Thank you to{" "}
         <a
@@ -124,7 +125,7 @@ export async function getStaticProps() {
   const results = await cloudinary.v2.search
     .expression(`folder:${process.env.CLOUDINARY_FOLDER}/*`)
     .sort_by("public_id", "desc")
-    .max_results(400)
+    .max_results(12)
     .execute();
   let reducedResults: ImageProps[] = [];
 
