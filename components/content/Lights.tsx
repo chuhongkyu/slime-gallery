@@ -2,10 +2,12 @@ const Lights = () => {
     return(
         <>
             <ambientLight intensity={1} />
+        
             <directionalLight
-                position={[5, 5, 5]}
+                position={[5, 5, 12]}
                 intensity={0.8}
-                color={"#9e69da"}
+                color={"#f2f5c0"}
+                castShadow
             />
         </>
     )
