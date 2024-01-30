@@ -10,9 +10,14 @@
   "dependencies": {
     "@headlessui/react": "^1.7.4",
     "@heroicons/react": "^2.0.13",
+    "@react-three/drei": "^9.96.5",
+    "@react-three/fiber": "^8.15.15",
+    "@react-three/rapier": "^1.2.1",
+    "@types/three": "^0.160.0",
     "cloudinary": "^1.32.0",
     "eslint-config-next": "^13.0.1",
-    "framer-motion": "^7.6.4",
+    "framer-motion": "^7.10.3",
+    "framer-motion-3d": "^11.0.3",
     "imagemin": "^8.0.1",
     "imagemin-jpegtran": "^7.0.0",
     "next": "latest",
@@ -21,7 +26,10 @@
     "react-dom": "^18.2.0",
     "react-hooks-global-state": "^2.0.0",
     "react-swipeable": "^7.0.0",
-    "react-use-keypress": "^1.3.1"
+    "react-use-keypress": "^1.3.1",
+    "swiper": "^11.0.5",
+    "three": "^0.160.1",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
     "@types/node": "18.11.9",
