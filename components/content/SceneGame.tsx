@@ -19,7 +19,7 @@ const SceneGame = () => {
                 
                 <SlimeController />
 
-                <NormalSlime position={[0,0,-5]} imgUrl={"/kingslime.png"}/>
+                <NormalSlime position={[0,0,-5]} imgUrl={"/king-slime.png"}/>
                 <NormalSlime position={[6,0,-4]} imgUrl={"/ninza.png"}/>
                 <NormalSlime position={[-6,0,-3.5]} imgUrl={"/police.png"}/>
 

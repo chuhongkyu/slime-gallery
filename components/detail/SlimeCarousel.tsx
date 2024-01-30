@@ -5,27 +5,27 @@ import 'swiper/css/pagination';
 import { useSlimeStore } from '../content/store';
 import { useRouter } from 'next/router';
 
-const slimes = [
-    {
-        imgSrc: '/fire-slime.png',
-    },
-    {
-        imgSrc: '/kingSlime.png',
-    },
-    {
-        imgSrc: '/ninza.png',
-    },
-    {
-        imgSrc: '/police.png',
-    },
-    {
-        imgSrc: '/cherry.png',
-    }
-]
-
 const SlimeCarousel = () => {
     const router = useRouter()
     const { setImageUrl } = useSlimeStore();
+    const slimes = [
+        {
+            imgSrc: '/fire-slime.png',
+        },
+        {
+            imgSrc: '/king-slime.png',
+        },
+        {
+            imgSrc: '/ninza.png',
+        },
+        {
+            imgSrc: '/police.png',
+        },
+        {
+            imgSrc: '/cherry.png',
+        }
+    ]
+
     const onClick = (data) => {
         setImageUrl(data)
         router.push('/content')
