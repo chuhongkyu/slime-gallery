@@ -9,17 +9,9 @@ export default function Slime(props) {
   const texture = useTexture(imageUrl)
   return (
     <motion.group animate={{scaleY: [1,1.2,1], transition: { duration: 1.2, repeat: Infinity }}} ref={group} {...props}>
-        <mesh rotation={[0,0,0]} position={[0,1,0]}>
+        <mesh rotation={[0,0,0]} position={[0,1.22,0]}>
             <planeGeometry args={[3,3]} />
-            <meshBasicMaterial map={texture} transparent/>
-        </mesh>
-        <mesh rotation={[0,Math.PI,0]} position={[0,1,0]}>
-            <planeGeometry args={[3,3]} />
-            <meshBasicMaterial map={texture} transparent/>
-        </mesh>
-        <mesh scale-y={0.1} position={[0,0,0]}>
-            <sphereGeometry args={[0.6]} />
-            <meshBasicMaterial color="rgb(44, 43, 43)" transparent opacity={0.7}/>
+            <meshBasicMaterial map={texture} transparent side={2} alphaTest={0.5}/>
         </mesh>
     </motion.group>
   );

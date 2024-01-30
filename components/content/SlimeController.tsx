@@ -5,8 +5,8 @@ import { useRef } from "react";
 import Slime from "./Slime";
 import { Controls } from "./Scene";
 
-const JUMP_FORCE = 0.5;
-const MOVEMENT_SPEED = 0.1;
+const JUMP_FORCE = 1.8;
+const MOVEMENT_SPEED = 0.15;
 const MAX_VEL = 3;
 
 export const SlimeController = () => {
@@ -32,11 +32,11 @@ export const SlimeController = () => {
     let changeRotation = false;
     if (rightPressed && linvel.x < MAX_VEL) {
       impulse.x += MOVEMENT_SPEED;
-      // changeRotation = true;
+      changeRotation = true;
     }
     if (leftPressed && linvel.x > -MAX_VEL) {
       impulse.x -= MOVEMENT_SPEED;
-      // changeRotation = true;
+      changeRotation = true;
     }
     if (backPressed && linvel.z < MAX_VEL) {
       impulse.z += MOVEMENT_SPEED;
@@ -49,7 +49,10 @@ export const SlimeController = () => {
 
     rigidbody.current.applyImpulse(impulse, true);
     if (changeRotation) {
-      const angle = Math.atan2(linvel.x, linvel.z);
+      let angle = 0;
+      if (rightPressed) {
+        angle = Math.PI;
+      }
       character.current.rotation.y = angle;
     }
   });
@@ -65,11 +68,15 @@ export const SlimeController = () => {
           isOnFloor.current = true;
         }}
       >
-        <CapsuleCollider args={[0.8, 0.4]} position={[0, 1.2, 0]} />
+        <CapsuleCollider args={[0.4, 0.8]} position={[0, 1.2, 0]} />
         <group ref={character}>
           <Slime />
         </group>
-        
+        {/* 그림자 */}
+        <mesh scale-y={0.1} position={[0,0,0]}>
+            <sphereGeometry args={[0.6]} />
+            <meshBasicMaterial color="rgba(61, 61, 61, 0.466)"/>
+        </mesh>
       </RigidBody>
     </group>
   );

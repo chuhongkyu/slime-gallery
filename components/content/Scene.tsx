@@ -1,7 +1,7 @@
 import { KeyboardControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber"
 import { Physics } from "@react-three/rapier";
-import { Suspense, useEffect, useMemo } from "react";
+import { Suspense, useMemo } from "react";
 import SceneGame from "./SceneGame";
 
 export const Controls = {
@@ -25,13 +25,14 @@ const Scene = () => {
     );
     return(
         <KeyboardControls map={map}>
-            <Canvas shadows camera={{ position: [0, 6, 14], fov: 42 }}>
+            
+            <Canvas camera={{ position: [0, 6, 14], fov: 42 }}>
                 <color attach="background" args={["#55d9fa"]} />
                 <fog attach="fog" args={["#55d9fa", 30, 39]} />
                 <Suspense>
-                <Physics debug>
-                    <SceneGame />
-                </Physics>
+                    <Physics debug={false}>
+                        <SceneGame />
+                    </Physics>
                 </Suspense>
             </Canvas>
         </KeyboardControls>
