@@ -4,12 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
-import Modal from "../components/Modal";
 import cloudinary from "../utils/cloudinary";
 import getBase64ImageUrl from "../utils/generateBlurPlaceholder";
 import type { ImageProps } from "../utils/types";
 import { useLastViewedPhoto } from "../utils/useLastViewedPhoto";
-import ButtonDetail from "../components/ButtonDetail";
 import Header from "../components/Header";
 import PostSection from "../components/PostSection";
 
@@ -43,7 +41,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         <meta name="description" content="GPTs Sticker Slime Gallery" />
         <meta name="keywords" content="GPT · Sticker · Slime · Cute · Gallery" />
       </Head>
-      
+      <Header/>
       <main className="mx-auto max-w-[1960px] pt-10 md:pt-20">
         <PostSection>
           <>

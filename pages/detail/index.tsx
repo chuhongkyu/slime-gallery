@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useSlimeStore } from "../../components/content/store";
 import Link from "next/link";
 import SlimeCarousel from "../../components/detail/SlimeCarousel";
+import Header from "../../components/Header";
 
 const Detail: NextPage = () => {
     const [file, setFile] = useState(null);
@@ -60,6 +61,7 @@ const Detail: NextPage = () => {
         <Head>
           <title>Slime Sticker Photos</title>
         </Head>
+        <Header/>
         <main className="mx-auto max-w-[860px] p-10">
             <h1 className="text-lg text-white py-10">Upload Your GPTs Custom Slime</h1>
 

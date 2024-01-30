@@ -1,5 +1,4 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
-import Header from "../components/Header";
 
 class MyDocument extends Document {
   render() {
@@ -26,7 +25,6 @@ class MyDocument extends Document {
           />
         </Head>
         <body className="bg-black antialiased">
-          <Header/>
           <Main />
           <NextScript />
         </body>

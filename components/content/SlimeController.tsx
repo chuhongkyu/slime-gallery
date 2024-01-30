@@ -1,15 +1,20 @@
 import { useKeyboardControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { CapsuleCollider, RigidBody } from "@react-three/rapier";
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import Slime from "./Slime";
 import { Controls } from "./Scene";
+import useFollowCam from "./utils/useFollowCam";
+import { Vector3 } from "three";
 
-const JUMP_FORCE = 1.8;
-const MOVEMENT_SPEED = 0.15;
+const JUMP_FORCE = 2.5;
+const MOVEMENT_SPEED = 0.2;
 const MAX_VEL = 3;
 
 export const SlimeController = () => {
+  const { pivot } = useFollowCam();
+  const worldPosition = useMemo(() => new Vector3(), [])
+
   const jumpPressed = useKeyboardControls((state) => state[Controls.jump]);
   const leftPressed = useKeyboardControls((state) => state[Controls.left]);
   const rightPressed = useKeyboardControls((state) => state[Controls.right]);
@@ -20,6 +25,11 @@ export const SlimeController = () => {
   const rigidbody = useRef(null);
   const character = useRef(null);
   const isOnFloor = useRef(true);
+
+  const makeFollowCam = ()=> {
+    character?.current.getWorldPosition(worldPosition)
+    pivot.position.lerp(worldPosition, 0.9)
+  }
 
   useFrame(() => {
     const impulse = { x: 0, y: 0, z: 0 };
@@ -55,6 +65,7 @@ export const SlimeController = () => {
       }
       character.current.rotation.y = angle;
     }
+    makeFollowCam()
   });
 
   return (

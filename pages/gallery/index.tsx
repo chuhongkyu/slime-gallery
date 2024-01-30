@@ -9,6 +9,7 @@ import cloudinary from "../../utils/cloudinary";
 import getBase64ImageUrl from "../../utils/generateBlurPlaceholder";
 import type { ImageProps } from "../../utils/types";
 import { useLastViewedPhoto } from "../../utils/useLastViewedPhoto";
+import Header from "../../components/Header";
 
 const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
   const router = useRouter();
@@ -40,6 +41,7 @@ const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
         <meta name="description" content="GPTs Sticker Slime Gallery" />
         <meta name="keywords" content="GPT · Sticker · Slime · Cute · Gallery" />
       </Head>
+      <Header/>
       <main className="mx-auto max-w-[1960px] p-4">
         {photoId && (
           <Modal

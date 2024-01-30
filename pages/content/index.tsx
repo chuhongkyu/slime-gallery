@@ -3,12 +3,15 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion"
 import { useSlimeStore } from "../../components/content/store";
+import Header from "../../components/Header";
 
 const Scene = dynamic(() => import('../../components/content/Scene'), {ssr: false})
 
 const Content: NextPage = () => {
     const imageUrl = useSlimeStore(state => state.imageUrl);
     return(
+        <>
+        <Header/>
         <motion.main 
           className="w-full h-screen" 
           initial={{ backgroundColor: "rgb(0,0,0)"}} 
@@ -29,6 +32,7 @@ const Content: NextPage = () => {
                 />
             </motion.div>
         </motion.main>
+        </>
     )
 }
 
