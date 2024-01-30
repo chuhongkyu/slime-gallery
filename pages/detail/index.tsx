@@ -65,9 +65,9 @@ const Detail: NextPage = () => {
         <main className="mx-auto max-w-[860px] p-10">
             <h1 className="text-lg text-white py-10">Upload Your GPTs Custom Slime</h1>
 
-            <div className="flex flex-col gap-7 relative z-20 md:flex-row">
-              <form className="relative z-10 flex flex-col items-center justify-center w-[360px]" onSubmit={handleSubmit}>
-                  <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50">
+            <div className="flex flex-col gap-4 relative z-20 md:flex-row md:gap-7">
+              <form className="relative z-10 flex flex-col items-center justify-center w-full md:w-[50%]" onSubmit={handleSubmit}>
+                  <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-200">
                       {file ? 
                       <div className="flex flex-col items-center justify-center pt-5 pb-6">
                         <Image width={150} height={150} src={previewUrl} alt="preload"/>
@@ -86,7 +86,7 @@ const Detail: NextPage = () => {
                   <p className="text-xs text-white py-5">{filename}</p>
                   {file && <button className="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" type="submit">Upload</button>}
               </form>
-              <div className="flex justify-center items-center w-[260px] h-[260px] border-2 border-gray-300 border-dashed rounded-lg">
+              <div className="flex justify-center items-center w-full h-[260px] border-2 border-gray-300 border-dashed rounded-lg md:w-[50%]">
               {url ? 
                 <div className="flex flex-col">
                   <Image width={150} height={150} className="flex flex-col items-center justify-center" src={url} alt="make Slime" />
