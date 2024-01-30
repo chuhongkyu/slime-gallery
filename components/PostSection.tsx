@@ -8,7 +8,7 @@ const PostSection = ({children}) => {
 
                 <article className="flex flex-col shadow my-4">
                 
-                    <a href="#" className="hover:opacity-75">
+                    <a href="#" className="hover:opacity-75 border-2 border-white">
                         <Image width={1000} height={500} src="/upload-post.png" alt="Post"/>
                     </a>
                     <div className="bg-white flex flex-col justify-start p-6">
@@ -24,7 +24,7 @@ const PostSection = ({children}) => {
 
                 <article className="flex flex-col shadow my-4">
                 
-                    <a href="#" className="hover:opacity-75">
+                    <a href="#" className="hover:opacity-75 border-">
                         <Image width={1000} height={500} src="/post.png" alt="Post"/>
                     </a>
                     <div className="bg-white flex flex-col justify-start p-6">
@@ -52,12 +52,6 @@ const PostSection = ({children}) => {
                         <a href="#" className="uppercase text-gray-800 hover:text-black">Continue Reading <i className="fas fa-arrow-right"></i></a>
                     </div>
                 </article> */}
-
-                <div className="flex items-center py-8">
-                    <a href="#" className="h-10 w-10 bg-blue-800 hover:bg-blue-600 font-semibold text-white text-sm flex items-center justify-center">1</a>
-                    <a href="#" className="h-10 w-10 font-semibold text-gray-800 hover:bg-blue-600 hover:text-white text-sm flex items-center justify-center">2</a>
-                    <a href="#" className="h-10 w-10 font-semibold text-gray-800 hover:text-gray-900 text-sm flex items-center justify-center ml-3">Next <i className="fas fa-arrow-right ml-2"></i></a>
-                </div>
 
             </section>
 

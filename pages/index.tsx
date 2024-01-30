@@ -44,7 +44,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
         <meta name="keywords" content="GPT · Sticker · Slime · Cute · Gallery" />
       </Head>
       
-      <main className="mx-auto max-w-[1960px] p-20">
+      <main className="mx-auto max-w-[1960px] pt-10 md:pt-20">
         <PostSection>
           <>
           {images.map(({ id, public_id, format, blurDataUrl }) => (
