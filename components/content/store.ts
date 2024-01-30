@@ -9,3 +9,4 @@ export const useSlimeStore = create<SlimeStore>((set) => ({
   imageUrl: '/fire-slime.png',
   setImageUrl: (url) => set({ imageUrl: url }),
 }));
+

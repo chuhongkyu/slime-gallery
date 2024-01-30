@@ -86,7 +86,7 @@ export const SlimeController = () => {
         {/* 그림자 */}
         <mesh scale-y={0.1} position={[0,0,0]}>
             <sphereGeometry args={[0.6]} />
-            <meshBasicMaterial color="rgba(61, 61, 61, 0.466)"/>
+            <meshBasicMaterial color="rgb(61, 61, 61)"/>
         </mesh>
       </RigidBody>
     </group>
