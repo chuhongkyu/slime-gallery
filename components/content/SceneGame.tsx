@@ -3,7 +3,6 @@ import { SlimeController } from "./SlimeController"
 import Lights from "./Lights"
 import { NormalSlime } from "./npc/NormalSlime"
 import { Wall } from "./object/Wall"
-import { ContactShadows } from "@react-three/drei"
 
 const SceneGame = () => {
     return(

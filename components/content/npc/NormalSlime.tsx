@@ -29,7 +29,7 @@ export const NormalSlime = ({imgUrl = "/police.png", position}) => {
       >
         <CapsuleCollider args={[0.4, 0.8]} position={[0, 1.2, 0]} />
         <group ref={character}>
-            <motion.group animate={{scaleY: [1,1.2,1], transition: { duration: 1.2, repeat: Infinity }}}>
+            <motion.group animate={{scaleY: [1,1.15,1], transition: { duration: 1.2, repeat: Infinity }}}>
                 <mesh rotation={[0,0,0]} position={[0,1.22,0]}>
                     <planeGeometry args={[3,3]} />
                     <meshBasicMaterial map={texture} transparent side={2} alphaTest={0.5}/>

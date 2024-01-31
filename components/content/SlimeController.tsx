@@ -81,13 +81,8 @@ export const SlimeController = () => {
       >
         <CapsuleCollider args={[0.4, 0.8]} position={[0, 1.2, 0]} />
         <group ref={character}>
-          <Slime />
+          <Slime jumpPressed={jumpPressed}/>
         </group>
-        {/* 그림자 */}
-        <mesh scale-y={0.1} position={[0,0,0]}>
-            <sphereGeometry args={[0.6]} />
-            <meshBasicMaterial color="rgb(61, 61, 61)"/>
-        </mesh>
       </RigidBody>
     </group>
   );
