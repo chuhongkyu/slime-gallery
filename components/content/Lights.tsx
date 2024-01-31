@@ -2,12 +2,9 @@ const Lights = () => {
     return(
         <>
             <ambientLight intensity={1} />
-            <directionalLight
-                position={[5, 7, 5]}
-                intensity={0.8}
-                color={"#f2f5c0"}
-                castShadow
-            />
+            <directionalLight castShadow position={[2.5, 8, 5]} shadow-mapSize={[1024, 1024]}>
+                <orthographicCamera attach="shadow-camera" args={[-10, 10, 10, -10]} />
+            </directionalLight>
         </>
     )
 }
