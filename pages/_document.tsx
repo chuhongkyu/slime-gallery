@@ -24,7 +24,7 @@ class MyDocument extends Document {
             content="See pictures from Slime Stickers"
           />
         </Head>
-        <body className="bg-black antialiased">
+        <body className="bg-slate-50 antialiased">
           <Main />
           <NextScript />
         </body>

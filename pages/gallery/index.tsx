@@ -10,6 +10,7 @@ import getBase64ImageUrl from "../../utils/generateBlurPlaceholder";
 import type { ImageProps } from "../../utils/types";
 import { useLastViewedPhoto } from "../../utils/useLastViewedPhoto";
 import Header from "../../components/Header";
+import { Footer } from "../../components/Footer";
 
 const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
   const router = useRouter();
@@ -42,7 +43,7 @@ const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
         <meta name="keywords" content="GPT · Sticker · Slime · Cute · Gallery" />
       </Head>
       <Header/>
-      <main className="mx-auto max-w-[1960px] p-4">
+      <main className="mx-auto max-w-[1960px] px-1 pb-10 pt-10 md:pt-20 md:px-10">
         {photoId && (
           <Modal
             images={images}
@@ -103,17 +104,7 @@ const Gallery: NextPage = ({ images }: { images: ImageProps[] }) => {
           ))}
         </div>
       </main>
-      <footer className="p-6 text-center text-white/80 sm:p-12">
-        Thank you to{" "}
-        <a
-          href="https://mrchu.netlify.app/"
-          target="_blank"
-          className="font-semibold hover:text-white"
-          rel="noreferrer"
-        >
-          Hong kyu, chu
-        </a>
-      </footer>
+      <Footer/>
     </>
   );
 };

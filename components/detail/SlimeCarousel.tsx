@@ -33,13 +33,13 @@ const SlimeCarousel = () => {
     
     return(
         <div>
-            <h5 className="text-lg text-white py-10">You can also use slime that is already made</h5>
-            <Swiper slidesPerView={3.2}>
+            <h5 className="text-lg text-black py-10">You can also use slime that is already made</h5>
+            <Swiper slidesPerView={3.2} spaceBetween={10}>
                 {slimes.map((slime, index) => {
                     return(
                         <SwiperSlide 
                             onClick={()=> onClick(slime.imgSrc)}
-                            key={index + "Slime_KEY"} className="border-2 border-gray-300 border-dashed rounded-lg cursor-pointer hover:bg-slate-100">
+                            key={index + "Slime_KEY"} className="border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-slate-200 hover:bg-slate-300">
                             <img src={slime.imgSrc} alt="alt"/>
                         </SwiperSlide>
                     )

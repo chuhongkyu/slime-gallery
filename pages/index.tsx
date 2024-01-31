@@ -10,6 +10,7 @@ import type { ImageProps } from "../utils/types";
 import { useLastViewedPhoto } from "../utils/useLastViewedPhoto";
 import Header from "../components/Header";
 import PostSection from "../components/PostSection";
+import { Footer } from "../components/Footer";
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const router = useRouter();
@@ -74,17 +75,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
 
       </main>
 
-      <footer className="p-6 text-center text-white/80 sm:p-12">
-        Thank you to{" "}
-        <a
-          href="https://mrchu.netlify.app/"
-          target="_blank"
-          className="font-semibold hover:text-white"
-          rel="noreferrer"
-        >
-          Hong kyu, chu
-        </a>
-      </footer>
+      <Footer/>
     </>
   );
 };
