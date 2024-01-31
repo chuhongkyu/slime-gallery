@@ -6,7 +6,6 @@ import Slime from "./Slime";
 import { Controls } from "./Scene";
 import useFollowCam from "./utils/useFollowCam";
 import { Vector3 } from "three";
-import Lights from "./Lights";
 
 const JUMP_FORCE = 2.5;
 const MOVEMENT_SPEED = 0.2;
@@ -30,6 +29,13 @@ export const SlimeController = () => {
   const makeFollowCam = ()=> {
     character?.current.getWorldPosition(worldPosition)
     pivot.position.lerp(worldPosition, 0.9)
+  }
+
+  const checkOnFloor = (e) => {
+    const { other } = e;
+    if(other.colliderObject.name){
+      isOnFloor.current = true;
+    }
   }
 
   useFrame(() => {
@@ -77,9 +83,7 @@ export const SlimeController = () => {
         colliders={false}
         scale={[0.5, 0.5, 0.5]}
         enabledRotations={[false, false, false]}
-        onCollisionEnter={() => {
-          isOnFloor.current = true;
-        }}
+        onCollisionEnter={(e) => checkOnFloor(e)}
       >
         <CapsuleCollider args={[0.4, 0.8]} position={[0, 1.2, 0]} />
         <group ref={character}>

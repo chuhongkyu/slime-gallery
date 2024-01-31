@@ -22,7 +22,6 @@ export default function Slime(props) {
   const imageUrl = useSlimeStore(state => state.imageUrl);
   const texture = useTexture(imageUrl)
 
-
   return (
     <motion.group 
         variants={variants}

@@ -72,38 +72,38 @@ export function Assets(props: JSX.IntrinsicElements['group']) {
   return (
     <RigidBody type="fixed" scale={0.25} rotation={[0,-Math.PI/2,0]} position={[0,0.2, -2]} colliders="trimesh" ccd>
       <group {...props} >
-        <mesh castShadow geometry={nodes.Object_4.geometry} material={materials['Material.001']} position={[-30, 5.606, -10]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.999} />
-        <mesh castShadow geometry={nodes.Object_4.geometry} material={materials['Material.001']} position={[-12, 5.606, 0]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.999} />
-        <mesh castShadow geometry={nodes.Object_22.geometry} material={materials['Material.001']} position={[-32, 9.236, 10]} rotation={[0, -0.569, 0]} scale={0.999} />
-        <mesh castShadow geometry={nodes.Object_22.geometry} material={materials['Material.001']} position={[32, 9.236, 10]} rotation={[0, -0.569, 0]} scale={0.999} />
-        <mesh castShadow geometry={nodes.Object_24.geometry} material={materials['Material.001']} position={[-20, 4.749, 20]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.641} />
-        <mesh castShadow geometry={nodes.Object_24.geometry} material={materials['Material.001']} position={[20, 4.749, 20]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.641} />
-        <mesh castShadow geometry={nodes.Object_26.geometry} material={materials['Material.001']} position={[15, 9.236, -20]} rotation={[0, -0.569, 0]} scale={0.999} />
-        <mesh castShadow geometry={nodes.Object_28.geometry} material={materials['Material.001']} position={[-15, 4.749, -20]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.641} />
-        <mesh castShadow geometry={nodes.Object_4.geometry} material={materials['Material.001']} position={[32, 5.606, -25]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.999} />
-        <mesh castShadow geometry={nodes.Object_24.geometry} material={materials['Material.001']} position={[-32, 5.606, -25]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.641} />
-        <mesh castShadow geometry={nodes.Object_12.geometry} material={materials['Material.001']} position={[-10, 5.07, -30]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.641} />
-        <mesh castShadow geometry={nodes.Object_12.geometry} material={materials['Material.001']} position={[15, 5.07, -30]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.641} />
-        <mesh castShadow geometry={nodes.Object_6.geometry} material={materials['Material.001']} position={[22, 9.743, -40]} rotation={[0, -0.569, 0]} scale={0.999} />
-        <mesh castShadow geometry={nodes.Object_8.geometry} material={materials['Material.001']} position={[-22, 9.743, -40]} rotation={[0, -0.569, 0]} scale={0.999} />
-
+        <mesh castShadow geometry={nodes.Object_4.geometry} material={materials['Material.001']} position={[-30, 5.606, -10]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.999} />
+        <mesh castShadow geometry={nodes.Object_4.geometry} material={materials['Material.001']} position={[-12, 5.606, 0]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.999} />
+        <mesh castShadow geometry={nodes.Object_22.geometry} material={materials['Material.001']} position={[-32, 9.236, 10]} rotation={[0, 0, 0]} scale={0.999} />
+        <mesh castShadow geometry={nodes.Object_22.geometry} material={materials['Material.001']} position={[32, 9.236, 10]} rotation={[0, 0, 0]} scale={0.999} />
+        <mesh castShadow geometry={nodes.Object_24.geometry} material={materials['Material.001']} position={[-20, 4.749, 20]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.641} />
+        <mesh castShadow geometry={nodes.Object_24.geometry} material={materials['Material.001']} position={[45, 4.749, -10]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.641} />
+        
+        <mesh castShadow geometry={nodes.Object_28.geometry} material={materials['Material.001']} position={[10, 4.749, 18]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.641} />
+        <mesh castShadow geometry={nodes.Object_4.geometry} material={materials['Material.001']} position={[32, 5.606, -25]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.999} />
+        <mesh castShadow geometry={nodes.Object_24.geometry} material={materials['Material.001']} position={[-32, 5.606, -25]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.641} />
+        <mesh castShadow geometry={nodes.Object_12.geometry} material={materials['Material.001']} position={[-10, 5.07, -30]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.641} />
+        <mesh castShadow geometry={nodes.Object_12.geometry} material={materials['Material.001']} position={[15, 5.07, -30]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.641} />
+        <mesh castShadow geometry={nodes.Object_6.geometry} material={materials['Material.001']} position={[22, 9.743, -45]} rotation={[0, 0, 0]} scale={0.999} />
+        <mesh castShadow geometry={nodes.Object_8.geometry} material={materials['Material.001']} position={[-22, 9.743, -45]} rotation={[0, 0, 0]} scale={0.999} />
+        <mesh castShadow geometry={nodes.Object_26.geometry} material={materials['Material.001']} position={[-22, 9.236, -70]} rotation={[0, 0, 0]} scale={0.999} />
 
         {/* 나무 그룹 */}
         <group position={[0,0, -80]}>
-          <mesh castShadow geometry={nodes.Object_4.geometry} material={materials['Material.001']} position={[12, 5.606, 0]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.999} />
-          <mesh castShadow geometry={nodes.Object_4.geometry} material={materials['Material.001']} position={[-12, 5.606, 0]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.999} />
-          <mesh castShadow geometry={nodes.Object_22.geometry} material={materials['Material.001']} position={[-32, 9.236, 10]} rotation={[0, -0.569, 0]} scale={0.999} />
-          <mesh castShadow geometry={nodes.Object_22.geometry} material={materials['Material.001']} position={[32, 9.236, 10]} rotation={[0, -0.569, 0]} scale={0.999} />
-          <mesh castShadow geometry={nodes.Object_24.geometry} material={materials['Material.001']} position={[-20, 4.749, 20]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.641} />
-          <mesh castShadow geometry={nodes.Object_24.geometry} material={materials['Material.001']} position={[20, 4.749, 20]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.641} />
-          <mesh castShadow geometry={nodes.Object_26.geometry} material={materials['Material.001']} position={[15, 9.236, -20]} rotation={[0, -0.569, 0]} scale={0.999} />
-          <mesh castShadow geometry={nodes.Object_28.geometry} material={materials['Material.001']} position={[-15, 4.749, -20]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.641} />
-          <mesh castShadow geometry={nodes.Object_4.geometry} material={materials['Material.001']} position={[32, 5.606, -25]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.999} />
-          <mesh castShadow geometry={nodes.Object_24.geometry} material={materials['Material.001']} position={[-32, 5.606, -25]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.641} />
-          <mesh castShadow geometry={nodes.Object_12.geometry} material={materials['Material.001']} position={[-10, 5.07, -30]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.641} />
-          <mesh castShadow geometry={nodes.Object_12.geometry} material={materials['Material.001']} position={[15, 5.07, -30]} rotation={[-Math.PI, 0.569, -Math.PI]} scale={0.641} />
-          <mesh castShadow geometry={nodes.Object_6.geometry} material={materials['Material.001']} position={[22, 9.743, -40]} rotation={[0, -0.569, 0]} scale={0.999} />
-          <mesh castShadow geometry={nodes.Object_8.geometry} material={materials['Material.001']} position={[-22, 9.743, -40]} rotation={[0, -0.569, 0]} scale={0.999} />
+          <mesh castShadow geometry={nodes.Object_4.geometry} material={materials['Material.001']} position={[12, 5.606, 0]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.999} />
+          <mesh castShadow geometry={nodes.Object_4.geometry} material={materials['Material.001']} position={[-12, 5.606, 0]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.999} />
+          <mesh castShadow geometry={nodes.Object_22.geometry} material={materials['Material.001']} position={[-32, 9.236, 10]} rotation={[0, 0, 0]} scale={0.999} />
+          <mesh castShadow geometry={nodes.Object_22.geometry} material={materials['Material.001']} position={[32, 9.236, 10]} rotation={[0, 0, 0]} scale={0.999} />
+          <mesh castShadow geometry={nodes.Object_24.geometry} material={materials['Material.001']} position={[-20, 4.749, 20]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.641} />
+          <mesh castShadow geometry={nodes.Object_24.geometry} material={materials['Material.001']} position={[20, 4.749, 20]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.641} />
+          <mesh castShadow geometry={nodes.Object_26.geometry} material={materials['Material.001']} position={[15, 9.236, -20]} rotation={[0, 0, 0]} scale={0.999} />
+          <mesh castShadow geometry={nodes.Object_28.geometry} material={materials['Material.001']} position={[-15, 4.749, -20]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.641} />
+          <mesh castShadow geometry={nodes.Object_4.geometry} material={materials['Material.001']} position={[32, 5.606, -25]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.999} />
+          <mesh castShadow geometry={nodes.Object_24.geometry} material={materials['Material.001']} position={[-32, 5.606, -25]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.641} />
+          <mesh castShadow geometry={nodes.Object_12.geometry} material={materials['Material.001']} position={[-10, 5.07, -30]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.641} />
+          <mesh castShadow geometry={nodes.Object_12.geometry} material={materials['Material.001']} position={[15, 5.07, -30]} rotation={[-Math.PI, 0, -Math.PI]} scale={0.641} />
+          <mesh castShadow geometry={nodes.Object_6.geometry} material={materials['Material.001']} position={[22, 9.743, -40]} rotation={[0, 0, 0]} scale={0.999} />
+          <mesh castShadow geometry={nodes.Object_8.geometry} material={materials['Material.001']} position={[-22, 9.743, -40]} rotation={[0, 0, 0]} scale={0.999} />
         </group>
 
         {/* 울타리 */}
@@ -115,7 +115,7 @@ export function Assets(props: JSX.IntrinsicElements['group']) {
         </group>
 
         {/* 풀숲 */}
-        <group position={[12, 0, -50]}>
+        <group position={[12, 0, -180]}>
           <mesh castShadow geometry={nodes.Object_36.geometry} material={materials['Material.001']} position={[7, 0.536, -8]} rotation={[-1.063, 0.062, 0.28]} scale={0.236} />
           <mesh castShadow geometry={nodes.Object_30.geometry} material={materials['Material.001']} position={[-10, -0.154, 10]} rotation={[0, -0.569, 0]} scale={0.49} />
           <mesh castShadow geometry={nodes.Object_32.geometry} material={materials['Material.001']} position={[-5, -0.187, -5]} rotation={[0, -0.569, 0]} scale={0.49} />
@@ -182,7 +182,7 @@ export function Assets(props: JSX.IntrinsicElements['group']) {
         {/* <mesh castShadow geometry={nodes.Object_74.geometry} material={materials['Material.001']} position={[0, -0.096, -4.655]} scale={[0.175, 3.151, 0.175]} /> */}
         
         {/* 꽃 */}
-        <mesh castShadow geometry={nodes.Object_34.geometry} material={materials['Material.001']} position={[0, 0, 20]} rotation={[0, 1.474, 0]} scale={0.333} />
+        <mesh castShadow geometry={nodes.Object_34.geometry} material={materials['Material.001']} position={[12, 0, -5]} rotation={[0, 1.474, 0]} scale={0.333} />
         
       </group>
     </RigidBody>

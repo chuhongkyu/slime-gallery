@@ -7,7 +7,6 @@ import { motion } from "framer-motion-3d"
 export const NormalSlime = ({imgUrl = "/police.png", position}) => {
   const rigidbody = useRef(null);
   const character = useRef(null);
-  const isOnFloor = useRef(true);
 
   const texture = useTexture(imgUrl)
 
@@ -18,14 +17,12 @@ export const NormalSlime = ({imgUrl = "/police.png", position}) => {
   return (
     <group>
       <RigidBody
+        type="fixed"
         position={position}
         ref={rigidbody}
         colliders={false}
         scale={[0.5, 0.5, 0.5]}
         enabledRotations={[false, false, false]}
-        onCollisionEnter={() => {
-          isOnFloor.current = true;
-        }}
       >
         <CapsuleCollider args={[0.4, 0.8]} position={[0, 1.2, 0]} />
         <group ref={character}>
