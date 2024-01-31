@@ -6,6 +6,7 @@ import Slime from "./Slime";
 import { Controls } from "./Scene";
 import useFollowCam from "./utils/useFollowCam";
 import { Vector3 } from "three";
+import Lights from "./Lights";
 
 const JUMP_FORCE = 2.5;
 const MOVEMENT_SPEED = 0.2;
@@ -69,6 +70,7 @@ export const SlimeController = () => {
   });
 
   return (
+    
     <group>
       <RigidBody
         ref={rigidbody}
@@ -85,5 +87,6 @@ export const SlimeController = () => {
         </group>
       </RigidBody>
     </group>
+    
   );
 };

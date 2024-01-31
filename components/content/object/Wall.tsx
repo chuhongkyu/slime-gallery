@@ -1,12 +1,24 @@
 import { RigidBody } from "@react-three/rapier"
 
-export const Wall = (props) => {
+export const Wall = () => {
     return(
-        <group {...props}>
-            <RigidBody position={[0, 1, 0]} colliders="cuboid" type="fixed">
-                <mesh castShadow>
-                    <boxGeometry args={[2, 2, 2]} />
-                    <meshStandardMaterial color="rgb(197, 15, 207)"/>
+        <group>
+            <RigidBody position={[23, 1.5,-20]} colliders="cuboid" type="fixed">
+                <mesh>
+                    <boxGeometry args={[100, 3, 5]} />
+                    <meshBasicMaterial transparent opacity={0}/>
+                </mesh>
+            </RigidBody>
+            <RigidBody position={[-12, 1.5, -5]} colliders="cuboid" type="fixed">
+                <mesh>
+                    <boxGeometry args={[1, 3, 25]} />
+                    <meshBasicMaterial transparent opacity={0}/>
+                </mesh>
+            </RigidBody>
+            <RigidBody position={[23, 1.5, 10]} colliders="cuboid" type="fixed">
+                <mesh>
+                    <boxGeometry args={[100, 3, 5]} />
+                    <meshBasicMaterial transparent opacity={0}/>
                 </mesh>
             </RigidBody>
         </group>
