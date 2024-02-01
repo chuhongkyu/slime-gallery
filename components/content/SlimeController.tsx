@@ -33,7 +33,7 @@ export const SlimeController = () => {
 
   const checkOnFloor = (e) => {
     const { other } = e;
-    if(other.colliderObject.name){
+    if(other.colliderObject.name == "floor"){
       isOnFloor.current = true;
     }
   }
