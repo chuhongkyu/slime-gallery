@@ -153,7 +153,7 @@ export function Assets(props: JSX.IntrinsicElements['group']) {
           <mesh castShadow geometry={nodes.Object_68.geometry} material={materials['Material.001']} position={[12, 8.534, -200]} scale={[0.31, 5.576, 0.31]} />
           <mesh castShadow geometry={nodes.Object_68.geometry} material={materials['Material.001']} position={[12, 8.534, -250]} scale={[0.31, 5.576, 0.31]} />
         </group>
-
+      
 
         {/* 굽은 신호 등 */}
         {/* <mesh castShadow geometry={nodes.Object_66.geometry} material={materials['Material.001']} position={[-12, 7.94, -150]} scale={[0.31, 5.576, 0.31]} /> */}

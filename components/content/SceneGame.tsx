@@ -1,12 +1,8 @@
 import { CuboidCollider, RigidBody } from "@react-three/rapier"
 import { SlimeController } from "./SlimeController"
 import Lights from "./Lights"
-import { NormalSlime } from "./npc/NormalSlime"
-import { Wall } from "./object/Wall"
-import { Assets } from "./object/Assets"
-import { Map } from "./Map"
 
-const SceneGame = () => {
+const SceneGame = ({children}) => {
     return(
         <>
             <Lights />
@@ -21,9 +17,8 @@ const SceneGame = () => {
                 {/* <NormalSlime position={[0,0,-5]} imgUrl={"/king-slime.png"}/>
                 <NormalSlime position={[6,0,-4]} imgUrl={"/ninza.png"}/>
                 <NormalSlime position={[-6,0,-3.5]} imgUrl={"/police.png"}/> */}
-                <Map/>
-                <Wall/>
-                <Assets />
+                
+                {children}
             </group>
             <SlimeController />
         </>

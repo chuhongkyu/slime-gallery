@@ -13,7 +13,7 @@ const Header = () => {
 
     return(
         <header className="fixed w-full z-50">
-            <nav className={`bg-white border-gray-200 px-4 lg:px-6 py-2.5 ${pathname == "/content" ? "opacity-5 hover:opacity-100": "opacity-100" }`}>
+            <nav className={`bg-white border-gray-200 px-4 lg:px-6 py-2.5 ${pathname.indexOf("content") != -1 ? "opacity-5 hover:opacity-100": "opacity-100" }`}>
                 <div className="relative flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link href={"/"} className="flex items-center">
                         <Image src={"/fire-slime.png"} width={25} height={25} className="mr-3" alt="logo" />

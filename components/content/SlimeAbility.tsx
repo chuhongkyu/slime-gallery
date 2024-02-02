@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useSlimeStore } from "./store";
+import { ImageType, useImageAnalysisStore, useSlimeStore } from "./store";
 
-export const analyzeImage = async (imageUrl) => {
+const analyzeImage = async (imageUrl) => {
     const image = new Image();
     image.src = imageUrl;
   
@@ -94,9 +94,9 @@ export const analyzeImage = async (imageUrl) => {
   
         const sortedColors = Object.entries(colorCounts).sort((a, b) => b[1] - a[1]);
        
-        console.log('sortedColors', colorCounts)
+        // console.log('sortedColors', colorCounts)
         const mostCommonColor = sortedColors[0][0];
-        console.log('mostCommonColor',mostCommonColor)
+        // console.log('mostCommonColor',mostCommonColor)
         let size = "small";
   
         if (transparentPercentage < 30) {
@@ -108,7 +108,7 @@ export const analyzeImage = async (imageUrl) => {
         }
   
         resolve({
-            size,
+            size: size,
             color: mostCommonColor,
             });
         };
@@ -122,16 +122,17 @@ export const analyzeImage = async (imageUrl) => {
 
 export const SlimeAbility = () => {
     const imageUrl = useSlimeStore(state => state.imageUrl);
-    const [imageAnalysis, setImageAnalysis] = useState(null);
+    const imageAnalysis = useImageAnalysisStore((state) => state.image);
+    const { setImageAnalysis } = useImageAnalysisStore();
 
     useEffect(() => {
         if (imageUrl) {
-        analyzeImage(imageUrl)
-            .then((result) => {
-            setImageAnalysis(result);
+            analyzeImage(imageUrl)
+            .then((result:ImageType) => {
+                setImageAnalysis (result);
             })
             .catch((error) => {
-            console.error('Error analyzing image:', error);
+                console.error('Error analyzing image:', error);
             });
         }
     }, [imageUrl]);

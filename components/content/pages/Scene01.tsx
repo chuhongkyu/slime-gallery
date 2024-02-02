@@ -2,12 +2,11 @@ import { KeyboardControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber"
 import { Physics } from "@react-three/rapier";
 import { Suspense, useMemo } from "react";
-import SceneGame from "./SceneGame";
-import { SlimeAbility } from "./SlimeAbility";
-import { Wall } from "./object/Wall";
-import { Assets } from "./object/Assets";
-import { Map } from "./Map";
-import { Portal } from "./object/Portal";
+import { SlimeAbility } from "../SlimeAbility";
+import SceneGame from "../SceneGame";
+import { Map } from "../Map";
+import { Wall } from "../object/Wall";
+import { Assets } from "../object/Assets";
 
 export const Controls = {
     forward: "forward",
@@ -17,7 +16,7 @@ export const Controls = {
     jump: "jump",
 };
 
-const Scene = () => {
+const Scene01 = () => {
     const map = useMemo(
         () => [
           { name: Controls.forward, keys: ["ArrowUp", "KeyW"] },
@@ -40,7 +39,6 @@ const Scene = () => {
                                 <Map/>
                                 <Wall/>
                                 <Assets />
-                                <Portal position={[10,0.5,0]} path={"/content/onepage"}/>
                             </SceneGame>
                         </Physics>
                     </Suspense>
@@ -51,4 +49,4 @@ const Scene = () => {
     )
 }
 
-export default Scene;
+export default Scene01;
