@@ -26,17 +26,12 @@ export default function Slime(props) {
     <motion.group 
         variants={variants}
         animate={jumpPressed ? 'jump' : 'idle'} ref={group}>
-        <mesh rotation={[0,0,0]} position={[0,1.22,0.1]}>
-            <planeGeometry args={[3,3]} />
+        <mesh rotation={[0,0,0]} position={[0,1,0.05]}>
+            <planeGeometry args={[1.5,1.5]} />
             <meshBasicMaterial map={texture} transparent side={2} alphaTest={0.5}/>
         </mesh>
-        {/* 그림자 */}
-        {/* <mesh position={[0,1,0]} castShadow>
-            <circleGeometry args={[0.55,32]} />
-            <meshBasicMaterial color="rgb(61, 61, 61)" side={2}/>
-        </mesh> */}
-        <mesh rotation={[0,0,0]} position={[0,1.22,-0.1]}>
-            <planeGeometry args={[3,3]} />
+        <mesh rotation={[0,0,0]} position={[0,1,-0.05]}>
+            <planeGeometry args={[1.5,1.5]} />
             <meshBasicMaterial map={texture} transparent side={2} alphaTest={0.5}/>
         </mesh>
     </motion.group>

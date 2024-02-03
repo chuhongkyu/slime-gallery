@@ -7,7 +7,7 @@ const useFollowCam = () => {
   const pivot = useMemo(() => new Object3D(), [])
 
   const makeCamera = ()=>{
-    camera.position.set(0,5,10)
+    camera.position.set(3,5,8)
 
     pivot.add(camera)
     scene.add(pivot)

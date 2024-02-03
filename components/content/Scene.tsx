@@ -5,9 +5,11 @@ import { Suspense, useMemo } from "react";
 import SceneGame from "./SceneGame";
 import { SlimeAbility } from "./SlimeAbility";
 import { Wall } from "./object/Wall";
-import { Assets } from "./object/Assets";
 import { Map } from "./Map";
 import { Portal } from "./object/Portal";
+import { WallOne } from "./object/WallOne";
+import ObstacleSpinner from "./object/Obstacle";
+import { Ground } from "./object/Ground";
 
 export const Controls = {
     forward: "forward",
@@ -31,16 +33,17 @@ const Scene = () => {
     return(
         <>
             <KeyboardControls map={map}>
-                <Canvas shadows camera={{ position: [0, 4.5, 10], fov: 42, zoom: 1.2 }}>
-                    <color attach="background" args={["#55d9fa"]} />
+                <Canvas camera={{ position: [3, 5, 8], fov: 42, }}>
+                    <color attach="background" args={["#55d9fa"]} /> 
                     <fog attach="fog" args={["#55d9fa", 15, 30]} />
                     <Suspense fallback={null}>
-                        <Physics debug={false}>
+                        <Physics debug>
                             <SceneGame>
                                 <Map/>
-                                <Wall/>
-                                <Assets />
-                                <Portal position={[10,0.5,0]} path={"/content/onepage"}/>
+                                <WallOne/>
+                                <Ground/>
+                                <ObstacleSpinner position={[5,0,-10]} speed={1} />
+                                <Portal position={[18,1.1,-2]} path={"/content/onepage"}/>
                             </SceneGame>
                         </Physics>
                     </Suspense>

@@ -6,7 +6,7 @@ import { SlimeAbility } from "../SlimeAbility";
 import SceneGame from "../SceneGame";
 import { Map } from "../Map";
 import { Wall } from "../object/Wall";
-import { Assets } from "../object/Assets";
+import { Castle } from "../object/Castle";
 
 export const Controls = {
     forward: "forward",
@@ -30,7 +30,7 @@ const Scene01 = () => {
     return(
         <>
             <KeyboardControls map={map}>
-                <Canvas shadows camera={{ position: [0, 4.5, 10], fov: 42, zoom: 1.2 }}>
+                <Canvas shadows camera={{ position: [3, 5, 8], fov: 42, }}>
                     <color attach="background" args={["#55d9fa"]} />
                     <fog attach="fog" args={["#55d9fa", 15, 30]} />
                     <Suspense fallback={null}>
@@ -38,7 +38,7 @@ const Scene01 = () => {
                             <SceneGame>
                                 <Map/>
                                 <Wall/>
-                                <Assets />
+                                <Castle/>
                             </SceneGame>
                         </Physics>
                     </Suspense>
