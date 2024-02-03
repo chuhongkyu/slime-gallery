@@ -37,7 +37,7 @@ const Scene = () => {
                     <color attach="background" args={["#55d9fa"]} /> 
                     <fog attach="fog" args={["#55d9fa", 15, 30]} />
                     <Suspense fallback={null}>
-                        <Physics debug>
+                        <Physics gravity={[0,-9.8,0]} debug={false}>
                             <SceneGame>
                                 <Map/>
                                 <WallOne/>

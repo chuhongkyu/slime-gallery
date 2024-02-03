@@ -15,6 +15,12 @@ type ImageAnalysisStore = {
   setImageAnalysis: (type: ImageType) => void;
 };
 
+interface HouseStore {
+  isHouse: boolean;
+  setHouse: (prev: boolean) => void;
+}
+
+
 export const useSlimeStore = create<SlimeStore>((set) => ({
   imageUrl: '/fire-slime.png',
   setImageUrl: (url) => set({ imageUrl: url }),
@@ -26,4 +32,9 @@ export const useImageAnalysisStore = create<ImageAnalysisStore>((set) => ({
     color: "fire"
   },
   setImageAnalysis: (type) => set({ image : type })
+}));
+
+export const isHouseStore = create<HouseStore>((set) => ({
+  isHouse : false,
+  setHouse: () => set((state) => ({ isHouse: !state.isHouse })),
 }));

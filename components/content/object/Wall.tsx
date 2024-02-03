@@ -3,7 +3,7 @@ import { RigidBody } from "@react-three/rapier"
 export const Wall = () => {
     return(
         <group>
-            <RigidBody name="wall" position={[-5, 1.5, 15]} colliders="cuboid" type="fixed">
+            <RigidBody name="wall" position={[-5, 1.5, 14]} colliders="cuboid" type="fixed">
                 <mesh>
                     <boxGeometry args={[25, 50, 1]} />
                     <meshBasicMaterial color={"white"} transparent opacity={0}/>

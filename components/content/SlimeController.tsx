@@ -1,21 +1,23 @@
 import { useKeyboardControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { CapsuleCollider, CuboidCollider, RigidBody } from "@react-three/rapier";
-import { useMemo, useRef, useState } from "react";
+import { CapsuleCollider, RigidBody } from "@react-three/rapier";
+import { useEffect, useMemo, useRef } from "react";
 import Slime from "./Slime";
 import { Controls } from "./Scene";
 import useFollowCam from "./utils/useFollowCam";
 import { Vector3 } from "three";
 import { motion } from "framer-motion-3d"
-import Lights from "./Lights";
+import { isHouseStore } from "./store";
 
-const JUMP_FORCE = 2.5;
-const MOVEMENT_SPEED = 0.3;
-const MAX_VEL = 5;
+const JUMP_FORCE = 0.7;
+const MOVEMENT_SPEED = 0.2;
+const MAX_VEL = 3;
 
 export const SlimeController = () => {
   const { pivot } = useFollowCam();
   const worldPosition = useMemo(() => new Vector3(), [])
+
+  const isHouse = isHouseStore((state) => state.isHouse);
 
   const jumpPressed = useKeyboardControls((state) => state[Controls.jump]);
   const leftPressed = useKeyboardControls((state) => state[Controls.left]);
@@ -28,6 +30,8 @@ export const SlimeController = () => {
   const character = useRef(null);
   const isOnFloor = useRef(true);
   const isOnWall = useRef(false);
+  const newPosition = { x: -35, y: 5, z: -10 }; 
+  const resetPosition = { x: 0, y: 1, z: 0 };
 
   const makeFollowCam = ()=> {
     character?.current.getWorldPosition(worldPosition)
@@ -81,6 +85,16 @@ export const SlimeController = () => {
     }
     makeFollowCam()
   });
+
+  useEffect(()=>{
+    if (rigidbody?.current) {
+      if(isHouse){
+        rigidbody.current.setTranslation(new Vector3(newPosition.x, newPosition.y, newPosition.z), true);
+      }else{
+        rigidbody.current.setTranslation(new Vector3(resetPosition.x, resetPosition.y, resetPosition.z), true);
+      }
+    }
+  },[isHouse])
 
   return (
     
