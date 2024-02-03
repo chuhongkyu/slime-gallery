@@ -34,7 +34,7 @@ export function Block(props: JSX.IntrinsicElements['group']) {
             <meshBasicMaterial color={"#2b9267"}/>
           </mesh>
         </Detailed>
-        <CuboidCollider name="floor" position={[0, 0.5, 0]} args={[0.5,0.5,0.5]} />
+        <CuboidCollider friction={1} restitution={0.1} name="floor" position={[0, 0.5, 0]} args={[0.5,0.5,0.5]} />
       </group>
     </>
   )

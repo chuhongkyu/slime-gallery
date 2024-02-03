@@ -42,7 +42,7 @@ const Scene = () => {
                                 <Map/>
                                 <WallOne/>
                                 <Ground/>
-                                <ObstacleSpinner position={[5,0,-10]} speed={1} />
+                                <ObstacleSpinner position={[10,0,-15]} speed={1} />
                                 <Portal position={[18,1.1,-2]} path={"/content/onepage"}/>
                             </SceneGame>
                         </Physics>

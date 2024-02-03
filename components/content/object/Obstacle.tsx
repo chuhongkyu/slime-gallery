@@ -16,8 +16,8 @@ function ObstacleSpinner({ speed = 1, initialShift = Math.random() * 10, invert 
 
     return(
         <RigidBody ref={rigidBodyRef} type="kinematicPosition" restitution={2} friction={1} {...props}>
-            <mesh castShadow position={[4,0,0]}>
-                <boxGeometry args={[10, 0.5, 0.5]} />
+            <mesh castShadow position={[2.5,0,0]}>
+                <boxGeometry args={[5, 0.5, 0.5]} />
                 <meshStandardMaterial color="#A876F5" />
             </mesh>
         </RigidBody>

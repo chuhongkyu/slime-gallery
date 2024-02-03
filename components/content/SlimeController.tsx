@@ -10,7 +10,7 @@ import { motion } from "framer-motion-3d"
 import Lights from "./Lights";
 
 const JUMP_FORCE = 2.5;
-const MOVEMENT_SPEED = 1;
+const MOVEMENT_SPEED = 0.3;
 const MAX_VEL = 5;
 
 export const SlimeController = () => {
@@ -92,7 +92,7 @@ export const SlimeController = () => {
         onCollisionEnter={(e) => checkOnFloor(e)}
       >
         {/* <CuboidCollider args={[0.5,0.5,0.5]} position={[0, 1, 0]} /> */}
-        <CapsuleCollider args={[0.2, 0.4]} position={[0, 1, 0]} />
+        <CapsuleCollider args={[0.25, 0.2]} position={[0, 0.9, 0]} />
         <group ref={character}>
           <Slime jumpPressed={jumpPressed}/>
           {/* 그림자 */}

@@ -5,15 +5,50 @@ import { RepeatWrapping, TextureLoader } from "three";
 
 const blocks = [
     {
-        x: 5,
+        x: 10,
         y: 0,
         z: -2
     },
     {
-        x: 3,
+        x: 11,
         y: 0,
-        z: 2
-    }
+        z: -2
+    },
+    {
+        x: 12,
+        y: 0,
+        z: -2
+    },
+    {
+        x: 10,
+        y: 0,
+        z: -3
+    },
+    {
+        x: 10,
+        y: 0,
+        z: -4
+    },
+    {
+        x: 10,
+        y: 1,
+        z: -5
+    },
+    {
+        x: 9,
+        y: 1,
+        z: -6
+    },
+    {
+        x: 11,
+        y: 1,
+        z: -6
+    },
+    {
+        x: 10,
+        y: 2,
+        z: -6
+    },
 ];
 
 export const Ground = () => {
@@ -36,7 +71,7 @@ export const Ground = () => {
                 
                 {blocks.map((el, i)=> {
                     return(
-                        <Block key={i + "Block"} position={[el.x, 0, el.z]}/>
+                        <Block key={i + "Block"} position={[el.x, el.y, el.z]}/>
                     )
                 })}
             </group>
