@@ -4,7 +4,6 @@ import { Physics } from "@react-three/rapier";
 import { Suspense, useMemo } from "react";
 import SceneGame from "./SceneGame";
 import { SlimeAbility } from "./SlimeAbility";
-import { Wall } from "./object/Wall";
 import { Map } from "./Map";
 import { Portal } from "./object/Portal";
 import { WallOne } from "./object/WallOne";
@@ -43,7 +42,7 @@ const Scene = () => {
                                 <WallOne/>
                                 <Ground/>
                                 <ObstacleSpinner position={[10,0,-15]} speed={1} />
-                                <Portal position={[18,1.1,-2]} path={"/content/onepage"}/>
+                                <Portal position={[14,3,-5]} path={"/content/onepage"}/>
                             </SceneGame>
                         </Physics>
                     </Suspense>
