@@ -43,7 +43,6 @@ const Scene = () => {
                                 <WallOne/>
                                 <Ground/>
                                 <ObstacleSpinner position={[10,0,-15]} speed={1} />
-                                
                             </SceneGame>
                         </Physics>
                     </Suspense>

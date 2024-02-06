@@ -1,5 +1,6 @@
 import { NormalSlime } from "./npc/NormalSlime"
 import { ProtectSlime } from "./npc/ProtectSlime"
+import { Firewood } from "./object/Firewood"
 import { FloatCastle } from "./object/Floating_castle"
 import { House } from "./object/House"
 import { Room } from "./object/Room"
@@ -16,6 +17,7 @@ export const Map = () => {
             <FloatCastle position={[16,0,-3]}/>
             <ProtectSlime position={[13,4,-2]}/>
             <ProtectSlime position={[16,6,-5]}/>
+            <Firewood position={[0,-0.2,5]}/>
         </>
     )
 }
