@@ -9,6 +9,7 @@ import { Portal } from "./object/Portal";
 import { WallOne } from "./object/WallOne";
 import ObstacleSpinner from "./object/Obstacle";
 import { Ground } from "./object/Ground";
+import KeyPad from "./KeyPad";
 
 export const Controls = {
     forward: "forward",
@@ -42,12 +43,13 @@ const Scene = () => {
                                 <WallOne/>
                                 <Ground/>
                                 <ObstacleSpinner position={[10,0,-15]} speed={1} />
-                                <Portal position={[14,3,-5]} path={"/content/onepage"}/>
+                                
                             </SceneGame>
                         </Physics>
                     </Suspense>
                 </Canvas>
             </KeyboardControls>
+            <KeyPad/>
             <SlimeAbility/>
         </>
     )

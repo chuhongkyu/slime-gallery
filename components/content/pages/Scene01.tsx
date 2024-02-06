@@ -7,6 +7,7 @@ import SceneGame from "../SceneGame";
 import { Map } from "../Map";
 import { Wall } from "../object/Wall";
 import { Castle } from "../object/Castle";
+import KeyPad from "../KeyPad";
 
 export const Controls = {
     forward: "forward",
@@ -36,7 +37,6 @@ const Scene01 = () => {
                     <Suspense fallback={null}>
                         <Physics debug={false}>
                             <SceneGame>
-                                <Map/>
                                 <Wall/>
                                 <Castle/>
                             </SceneGame>
@@ -44,6 +44,7 @@ const Scene01 = () => {
                     </Suspense>
                 </Canvas>
             </KeyboardControls>
+            <KeyPad/>
             <SlimeAbility/>
         </>
     )
