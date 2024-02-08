@@ -17,6 +17,7 @@ export const Controls = {
     left: "left",
     right: "right",
     jump: "jump",
+    skill: "skill",
 };
 
 const Scene = () => {
@@ -27,6 +28,7 @@ const Scene = () => {
           { name: Controls.left, keys: ["ArrowLeft", "KeyA"] },
           { name: Controls.right, keys: ["ArrowRight", "KeyD"] },
           { name: Controls.jump, keys: ["Space"] },
+          { name: Controls.skill, keys: ["KeyR"]}
         ],
         []
     );

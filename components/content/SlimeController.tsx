@@ -31,6 +31,7 @@ export const SlimeController = () => {
   const character = useRef(null);
   const isOnFloor = useRef(true);
   const isOnWall = useRef(false);
+
   const newPosition = { x: -35, y: 5, z: -10 }; 
   const resetPosition = { x: 0, y: 1, z: 0 };
 
@@ -121,7 +122,7 @@ export const SlimeController = () => {
                 <meshBasicMaterial color="rgb(61, 61, 61)"/>
             </motion.mesh>
           }
-          <Skill/>
+          {/* <Skill/> */}
         </group>
       </RigidBody>
     </group>

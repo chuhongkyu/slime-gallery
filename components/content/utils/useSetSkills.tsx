@@ -1,15 +1,28 @@
-interface ISkill {
+interface IProps {
     size: string;
     type: string;
 }
 
-const useSetSkills = ({size, type}:ISkill) => {
+export interface ISkill {
+    type: string;
+    color: string;
+    damage: number;
+    hp: number;
+};
+
+const useSetSkills = ({size, type}:IProps) => {
     const makeSkills = (skillType: string) => {
-        let dummySkills = {};
+        let dummySkills: ISkill = {
+            type: "fire",
+            color: "red",
+            damage: 200,
+            hp: 200
+        };
         switch (skillType) {
             case "fire":
                 dummySkills = {
                     type: "fire",
+                    color: "red",
                     damage: 210,
                     hp: 200
                 };
@@ -17,6 +30,7 @@ const useSetSkills = ({size, type}:ISkill) => {
             case "water":
                 dummySkills = {
                     type: "water",
+                    color: "skyblue",
                     damage: 190,
                     hp: 210
                 };
@@ -24,6 +38,7 @@ const useSetSkills = ({size, type}:ISkill) => {
             case "normal":
                 dummySkills = {
                     type: "normal",
+                    color: "yellow",
                     damage: 200,
                     hp: 200
                 };
@@ -31,6 +46,7 @@ const useSetSkills = ({size, type}:ISkill) => {
             case "angel":
                 dummySkills = {
                     type: "angel",
+                    color: "white",
                     damage: 220,
                     hp: 220
                 };
@@ -38,6 +54,7 @@ const useSetSkills = ({size, type}:ISkill) => {
             case "forest":
                 dummySkills = {
                     type: "forest",
+                    color: "green",
                     damage: 180,
                     hp: 230
                 };
@@ -45,6 +62,7 @@ const useSetSkills = ({size, type}:ISkill) => {
             case "poison":
                 dummySkills = {
                     type: "poison",
+                    color: "purple",
                     damage: 50,
                     hp: 220
                 };
@@ -52,6 +70,7 @@ const useSetSkills = ({size, type}:ISkill) => {
             case "dark":
                 dummySkills = {
                     type: "dark",
+                    color: "black",
                     damage: 220,
                     hp: 190
                 };
@@ -59,6 +78,7 @@ const useSetSkills = ({size, type}:ISkill) => {
             default:
                 dummySkills = {
                     type: "fire",
+                    color: "red",
                     damage: 200,
                     hp: 200
                 };
