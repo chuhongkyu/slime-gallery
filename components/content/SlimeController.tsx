@@ -8,6 +8,7 @@ import useFollowCam from "./utils/useFollowCam";
 import { Vector3 } from "three";
 import { motion } from "framer-motion-3d"
 import { isHouseStore } from "./store";
+import { Skill } from "./Skill";
 
 const JUMP_FORCE = 0.7;
 const MOVEMENT_SPEED = 0.2;
@@ -16,7 +17,7 @@ const MAX_VEL = 3;
 export const SlimeController = () => {
   const { pivot } = useFollowCam();
   const worldPosition = useMemo(() => new Vector3(), [])
-
+  
   const isHouse = isHouseStore((state) => state.isHouse);
 
   const jumpPressed = useKeyboardControls((state) => state[Controls.jump]);
@@ -105,7 +106,6 @@ export const SlimeController = () => {
         enabledRotations={[false, false, false]}
         onCollisionEnter={(e) => checkOnFloor(e)}
       >
-        {/* <CuboidCollider args={[0.5,0.5,0.5]} position={[0, 1, 0]} /> */}
         <CapsuleCollider args={[0.25, 0.2]} position={[0, 0.9, 0]} />
         <group ref={character}>
           <Slime jumpPressed={jumpPressed}/>
@@ -121,6 +121,7 @@ export const SlimeController = () => {
                 <meshBasicMaterial color="rgb(61, 61, 61)"/>
             </motion.mesh>
           }
+          <Skill/>
         </group>
       </RigidBody>
     </group>
