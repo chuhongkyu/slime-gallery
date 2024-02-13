@@ -70,7 +70,6 @@ export function Tree(props: JSX.IntrinsicElements['group']) {
   const [ state, setState ] = useState(false)
 
   return (
-    <RigidBody type="fixed" colliders="trimesh">
       <group {...props} dispose={null}>
         <group position={[19, 0.199, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={2}>
             <group position={[0.788, 0.148, -0.002]} scale={1.149}>
@@ -155,7 +154,6 @@ export function Tree(props: JSX.IntrinsicElements['group']) {
             <mesh geometry={nodes.Circle027_Material001_0.geometry} material={materials['Material.001']} position={[-0.005, -0.03, 1.045]} />
         </group>
       </group>
-    </RigidBody>
   )
 }
 

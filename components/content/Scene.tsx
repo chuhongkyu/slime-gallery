@@ -1,57 +1,35 @@
-import { KeyboardControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber"
 import { Physics } from "@react-three/rapier";
-import { Suspense, useMemo } from "react";
+import { Suspense } from "react";
 import SceneGame from "./SceneGame";
 import { SlimeAbility } from "./SlimeAbility";
 import { Map } from "./Map";
-import { Portal } from "./object/Portal";
+import { EcctrlJoystick } from "./ecctrl/EcctrlJoystick";
 import { WallOne } from "./object/WallOne";
 import ObstacleSpinner from "./object/Obstacle";
 import { Ground } from "./object/Ground";
 import KeyPad from "./KeyPad";
 
-export const Controls = {
-    forward: "forward",
-    back: "back",
-    left: "left",
-    right: "right",
-    jump: "jump",
-    skill: "skill",
-};
-
 const Scene = () => {
-    const map = useMemo(
-        () => [
-          { name: Controls.forward, keys: ["ArrowUp", "KeyW"] },
-          { name: Controls.back, keys: ["ArrowDown", "KeyS"] },
-          { name: Controls.left, keys: ["ArrowLeft", "KeyA"] },
-          { name: Controls.right, keys: ["ArrowRight", "KeyD"] },
-          { name: Controls.jump, keys: ["Space"] },
-          { name: Controls.skill, keys: ["KeyR"]}
-        ],
-        []
-    );
     return(
         <>
-            <KeyboardControls map={map}>
-                <Canvas camera={{ position: [3, 5, 8], fov: 42, }}>
-                    <color attach="background" args={["#55d9fa"]} /> 
-                    <fog attach="fog" args={["#55d9fa", 15, 30]} />
-                    <Suspense fallback={null}>
-                        <Physics gravity={[0,-9.8,0]} debug={false}>
-                            <SceneGame>
-                                <Map/>
-                                <WallOne/>
-                                <Ground/>
-                                <ObstacleSpinner position={[10,0,-15]} speed={1} />
-                            </SceneGame>
-                        </Physics>
-                    </Suspense>
-                </Canvas>
-            </KeyboardControls>
-            <KeyPad/>
+            <EcctrlJoystick />
+            <Canvas shadows>
+                <color attach="background" args={["#55d9fa"]} /> 
+                <fog attach="fog" args={["#55d9fa", 15, 30]} />
+                <Suspense fallback={null}>
+                    <Physics debug timeStep="vary">
+                        <SceneGame>
+                            <Map/>
+                            <WallOne/>
+                            <Ground/>
+                            <ObstacleSpinner position={[10,0,-15]} speed={1} />
+                        </SceneGame>
+                    </Physics>
+                </Suspense>
+            </Canvas>
             <SlimeAbility/>
+            <KeyPad/>
         </>
     )
 }

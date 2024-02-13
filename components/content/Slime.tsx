@@ -16,24 +16,22 @@ const variants = {
   }
 }
 
-export default function Slime(props) {
-  const { jumpPressed } = props;
-  const group = useRef(null);
+export default function Slime() {
   const imageUrl = useSlimeStore(state => state.imageUrl);
   const texture = useTexture(imageUrl)
 
   return (
-    <motion.group 
-        variants={variants}
-        animate={jumpPressed ? 'jump' : 'idle'} ref={group}>
-        <mesh rotation={[0,0,0]} position={[0,1,0.05]}>
-            <planeGeometry args={[1.5,1.5]} />
-            <meshBasicMaterial map={texture} transparent side={2} alphaTest={0.5}/>
-        </mesh>
-        <mesh rotation={[0,0,0]} position={[0,1,-0.05]}>
-            <planeGeometry args={[1.5,1.5]} />
-            <meshBasicMaterial map={texture} transparent side={2} alphaTest={0.5}/>
-        </mesh>
-    </motion.group>
+      <motion.group 
+          variants={variants}
+          animate={'idle'}>
+          <mesh rotation={[0,0,0]} position={[0,1,0.05]}>
+              <planeGeometry args={[1.5,1.5]} />
+              <meshBasicMaterial map={texture} transparent side={2} alphaTest={0.5}/>
+          </mesh>
+          <mesh rotation={[0,0,0]} position={[0,1,-0.05]}>
+              <planeGeometry args={[1.5,1.5]} />
+              <meshBasicMaterial map={texture} transparent side={2} alphaTest={0.5}/>
+          </mesh>
+      </motion.group>
   );
 }

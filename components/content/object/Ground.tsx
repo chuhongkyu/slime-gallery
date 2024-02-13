@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Block } from "./Block"
 import { CuboidCollider } from "@react-three/rapier";
 import { RepeatWrapping, TextureLoader } from "three";
-
+import { useGame } from 'ecctrl'
 const blocks = [
     {
         x: 10,
@@ -57,11 +57,10 @@ export const Ground = () => {
     texture.wrapS = RepeatWrapping;
     texture.wrapT = RepeatWrapping;
     texture.repeat.set(15, 15);
-
-
     return(
         <>
-            <group position-y={-1} receiveShadow>
+            <group position-y={-1}
+             receiveShadow>
                 {/* Ground */}
                 <mesh rotation={[-Math.PI/2, 0, 0]}>
                     <planeGeometry args={[45,45]}/>
