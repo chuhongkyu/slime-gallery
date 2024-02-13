@@ -3,12 +3,10 @@ import { Physics } from "@react-three/rapier";
 import { Suspense } from "react";
 import SceneGame from "./SceneGame";
 import { SlimeAbility } from "./SlimeAbility";
-import { Map } from "./Map";
 import { EcctrlJoystick } from "./ecctrl/EcctrlJoystick";
-import { WallOne } from "./object/WallOne";
-import ObstacleSpinner from "./object/Obstacle";
-import { Ground } from "./object/Ground";
 import KeyPad from "./KeyPad";
+import { World } from "./World";
+import { Portal } from "./object/Portal";
 
 const Scene = () => {
     return(
@@ -20,10 +18,8 @@ const Scene = () => {
                 <Suspense fallback={null}>
                     <Physics debug timeStep="vary">
                         <SceneGame>
-                            <Map/>
-                            <WallOne/>
-                            <Ground/>
-                            <ObstacleSpinner position={[10,0,-15]} speed={1} />
+                            <World />
+                            <Portal position={[-13,1.5,-16]} path={"/content/onepage"}/>
                         </SceneGame>
                     </Physics>
                 </Suspense>

@@ -5,12 +5,11 @@ import SceneGame from "../SceneGame";
 import { SlimeAbility } from "../SlimeAbility";
 import { EcctrlJoystick } from "../ecctrl/EcctrlJoystick";
 import KeyPad from "../KeyPad";
-import { Map } from "../Map";
-import { WallOne } from "../object/WallOne";
-import { Ground } from "../object/Ground";
-import ObstacleSpinner from "../object/Obstacle";
+import { World } from "../World";
+import { Wall } from "../object/Wall";
+import { Castle } from "../object/Castle";
 
-const Scene01 = () => {
+const Scene02 = () => {
     return(
         <>
             <EcctrlJoystick />
@@ -20,10 +19,9 @@ const Scene01 = () => {
                 <Suspense fallback={null}>
                     <Physics timeStep="vary">
                         <SceneGame>
-                            <Map/>
-                            <WallOne/>
-                            <Ground/>
-                            <ObstacleSpinner position={[10,0,-15]} speed={1} />
+                            <Wall/>
+                            <Castle/>
+                            <World />
                         </SceneGame>
                     </Physics>
                 </Suspense>
@@ -34,4 +32,4 @@ const Scene01 = () => {
     )
 }
 
-export default Scene01;
+export default Scene02;

@@ -53,6 +53,7 @@ const SceneGame = ({children}) => {
                         camTargetPos={{x:0,y:0.5,z:-1}}
                         camCollision={false}
                         ref={characterRef}
+                        floatHeight={0}
                         >
                             <group position={[0,-1.05,0]}>
                                 <Slime />

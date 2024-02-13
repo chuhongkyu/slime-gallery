@@ -28,7 +28,7 @@ export function FloatCastle(props: JSX.IntrinsicElements['group']) {
             <RigidBody type="fixed" colliders="trimesh">
               <mesh geometry={nodes.Object_4.geometry} material={materials['Material.030']} />
             </RigidBody>
-            <Portal position={[2.5,4.5,9.5]} path={"/content/onepage"}/>
+            <Portal position={[2.5,4.5,9.5]} path={"/content/twopage"}/>
         </motion.group>
     </group>
   )

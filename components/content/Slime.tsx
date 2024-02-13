@@ -28,6 +28,10 @@ export default function Slime() {
               <planeGeometry args={[1.5,1.5]} />
               <meshBasicMaterial map={texture} transparent side={2} alphaTest={0.5}/>
           </mesh>
+          <mesh castShadow rotation={[0,0,0]} position={[0,0.9,0]}>
+              <circleGeometry args={[0.4,18]} />
+              <meshBasicMaterial color={"white"} side={2}/>
+          </mesh>
           <mesh rotation={[0,0,0]} position={[0,1,-0.05]}>
               <planeGeometry args={[1.5,1.5]} />
               <meshBasicMaterial map={texture} transparent side={2} alphaTest={0.5}/>
