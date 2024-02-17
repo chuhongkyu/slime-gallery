@@ -16,7 +16,7 @@ const Scene = () => {
                 <color attach="background" args={["#55d9fa"]} /> 
                 <fog attach="fog" args={["#55d9fa", 15, 30]} />
                 <Suspense fallback={null}>
-                    <Physics debug timeStep="vary">
+                    <Physics timeStep="vary">
                         <SceneGame>
                             <World />
                             <Portal position={[-13,1.5,-16]} path={"/content/onepage"}/>

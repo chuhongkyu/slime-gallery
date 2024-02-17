@@ -20,3 +20,9 @@
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+@media screen and (max-width: 680px) {
+  .controlKeys {
+    display: none;
+  }
+}
