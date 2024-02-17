@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Block } from "./Block"
 import { CuboidCollider } from "@react-three/rapier";
 import { RepeatWrapping, TextureLoader } from "three";
-import { useGame } from 'ecctrl'
+
 const blocks = [
     {
         x: 10,

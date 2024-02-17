@@ -8,8 +8,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@dimforge/rapier3d-compat": "^0.11.2",
     "@headlessui/react": "^1.7.4",
     "@heroicons/react": "^2.0.13",
+    "@react-spring/three": "^9.7.3",
     "@react-three/drei": "^9.96.5",
     "@react-three/fiber": "^8.15.15",
     "@react-three/rapier": "^1.2.1",
@@ -20,6 +22,7 @@
     "framer-motion-3d": "^11.0.3",
     "imagemin": "^8.0.1",
     "imagemin-jpegtran": "^7.0.0",
+    "leva": "^0.9.35",
     "next": "latest",
     "next-sitemap": "^4.2.3",
     "react": "^18.2.0",
